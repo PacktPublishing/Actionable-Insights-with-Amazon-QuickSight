@@ -1,0 +1,33 @@
+aws s3api create-bucket --bucket data-lake-xxxxxxxxxx --region us-east-1
+
+aws s3 ls 's3://nyc-tlc/trip data/' --no-sign-request
+
+aws s3 cp "s3://nyc-tlc/trip data/" s3://data-lake-xxxxxxxxxx/yellowtrips/ --recursive --exclude "*" --include "yellow_tripdata_2020*" 
+
+aws glue create-database --database-input "{\"Name\":\"my-data-lake-db\"}" --region us-east-1
+
+aws glue get-databases --region us-east-1
+
+aws iam create-policy --policy-name DataLakeReadAccess --policy-document file://policy
+
+aws iam create-role --role-name GlueCrawlerRole --assume-role-policy-document file://role-policy
+
+aws iam attach-role-policy --role-name GlueCrawlerRole --policy-arn arn:aws:iam::aws:policy/service-role/AWSGlueServiceRole
+
+aws iam attach-role-policy --role-name GlueCrawlerRole --policy-arn arn:aws:iam::<ACCOUNT-ID>:policy/DataLakeReadAccess
+
+aws glue create-crawler --name qs-book-crawler --role arn:aws:iam::<ACCOUNT-ID>:role/GlueCrawlerRole --database-name my-data-lake-db --targets "{\"S3Targets\":[{\"Path\":\"s3://data-lake-xxxxxxxxxx/yellowtrips\"}]}" --region us-east-1
+
+aws glue start-crawler --name qs-book-crawler --region us-east-1
+
+aws glue get-tables --database-name my-data-lake-db
+
+aws redshift create-cluster --node-type dc2.large --number-of-nodes 2 --master-username admin --master-user-password R3dsh1ft --cluster-identifier mycluster --region us-east-1
+
+aws iam create-role --role-name RedshiftSpectrumRole --assume-role-policy-document file://role-policy-redshift
+
+aws iam attach-role-policy --role-name RedshiftSpectrumRole --policy-arn arn:aws:iam::aws:policy/AmazonS3FullAccess
+
+aws iam attach-role-policy --role-name RedshiftSpectrumRole --policy-arn arn:aws:iam::aws:policy/AWSGlueConsoleFullAccess
+
+aws redshift modify-cluster-iam-roles --cluster-identifier mycluster --add-iam-roles arn:aws:iam::<ACCOUNT-ID>:role/RedshiftSpectrumRole --region us-east-1
