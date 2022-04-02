@@ -1,0 +1,5 @@
+aws redshift  describe-clusters --cluster-identifier mycluster --region us-east-1
+
+#### Look up Table ####
+https://s3.amazonaws.com/nyc-tlc/misc/taxi+_zone_lookup.csv
+
