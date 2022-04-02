@@ -1,0 +1,7 @@
+aws quicksight describe-user --user-name reader --aws-account-id <aws account id> --namespace default --region us-east-1
+
+aws quicksight list-dashboards --aws-account-id <aws account id> --region us-east-1
+
+aws quicksight get-dashboard-embed-url --aws-account-id <aws account id> --dashboard-id <dashboard id> --identity-type QUICKSIGHT --user-arn <user arn> --region us-east-1
+
+
