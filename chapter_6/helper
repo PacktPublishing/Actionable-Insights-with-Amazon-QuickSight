@@ -1,0 +1,4 @@
+
+Total distance driven from ${PickUpBoroughForecast} to ${DropOffBoroughForecast} on the ForecastInsight.timeValue.formattedValue is forecasted to be round(ForecastInsight.metricValue.value,0) miles.
+
+
