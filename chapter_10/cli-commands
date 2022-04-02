@@ -1,0 +1,11 @@
+aws quicksight create-namespace --aws-account-id <account-id> --namespace companyA --identity-store QUICKSIGHT
+
+aws quicksight list-namespaces --aws-account-id  <aws-account-id>
+
+aws quicksight register-user --identity-type IAM --email <your-email> --user-role AUTHOR --iam-arn arn:aws:iam::<aws-account-id>:user/author-a --aws-account-id <aws-account-id> --namespace companyA
+
+aws quicksight list-users --aws-account-id <aws-account-id> --namespace companyA
+
+aws quicksight list-dashboards --aws-account <aws-account-id>
+
+aws quicksight update-dashboard-permissions --aws-account-id <aws-account-id> --dashboard-id <dashboard-id> --grant-permissions Actions=quicksight:DescribeDashboard,quicksight:ListDashboardVersions,quicksight:UpdateDashboardPermissions,quicksight:QueryDashboard,quicksight:UpdateDashboard,quicksight:DeleteDashboard,quicksight:DescribeDashboardPermissions,quicksight:UpdateDashboardPublishedVersion,Principal=arn:aws:quicksight:us-east-1:<aws-account-id>:user/companyA/author-a
