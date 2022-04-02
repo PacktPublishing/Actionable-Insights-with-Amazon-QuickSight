@@ -1,0 +1,21 @@
+{
+    "AwsAccountId": "xxxxxxxxxxxx",
+    "TemplateId": "first-template",
+    "Name": "My First Template",
+    "SourceEntity": {
+        "SourceAnalysis": {
+            "Arn": "arn:aws:quicksight:us-east-1: xxxxxxxxxxxx:analysis/xxxxxxx-xxxx-xxxxx-xxxxx-xxxxxxxxxx",
+            "DataSetReferences": [
+                {
+                    "DataSetPlaceholder": "Main Dataset",
+                    "DataSetArn": "arn:aws:quicksight:us-east-1: xxxxxxxxxxxx:dataset/xxxxxxx-xxxx-xxxxx-xxxxx-xxxxxxxxxx"
+                },
+                {
+                    "DataSetPlaceholder": "Enrich Dataset",
+                    "DataSetArn": "arn:aws:quicksight:us-east-1: xxxxxxxxxxxx:dataset/xxxxxxx-xxxx-xxxxx-xxxxx-xxxxxxxxxx"
+                }
+            ]
+        }
+    },
+    "VersionDescription": "1"
+}

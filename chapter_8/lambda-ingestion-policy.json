@@ -1,0 +1,24 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "VisualEditor0",
+            "Effect": "Allow",
+            "Action": "quicksight:DeleteDataSet",
+            "Resource": "arn:aws:quicksight:*:<aws-account-id>:dataset/*"
+        },
+        {
+            "Sid": "VisualEditor1",
+            "Effect": "Allow",
+            "Action": [
+                "quicksight:CreateIngestion",
+                "quicksight:DeleteDataSource",
+                "quicksight:CancelIngestion"
+            ],
+            "Resource": [
+                "arn:aws:quicksight:*:<aws-account-id>:datasource/*",
+                "arn:aws:quicksight:*:<aws-account-id>:dataset/*/ingestion/*"
+            ]
+        }
+    ]
+}

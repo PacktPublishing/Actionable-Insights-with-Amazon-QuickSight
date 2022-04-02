@@ -1,0 +1,29 @@
+aws –version
+
+aws configure
+
+aws quicksight help
+
+aws quicksight list-dashboards --aws-account-id <numerical account id> --region us-east-1
+
+pip install boto3
+
+aws quicksight create-data-source --cli-input-json file://create-data-source.json
+
+aws quicksight describe-account-settings --aws-account-id <account-id>
+
+aws quicksight describe-account-customization --aws-account-id <account-id>
+
+aws quicksight create-account-customization --aws-account-id <account-id> --account-customization DefaultTheme=arn:aws:quicksight::aws:theme/MIDNIGHT --region=us-east-1
+
+aws quicksight list-analyses --aws-account-id <account-id> --region us-east-1
+
+aws quicksight describe-analysis --aws-account-id <account-id> --analysis-id xxxxxxx-xxxx-xxxxx-xxxxx-xxxxxxxxxx --region us-east-1
+
+aws quicksight list-templates --aws-account-id <account-id> --region us-east-1
+
+aws quicksight create-analysis --cli-input-json file://create-analysis-from-template.json --region us-east-1
+
+aws quicksight list-analyses --aws-account-id xxxxxxxxxxxx
+
+aws s3 cp sample.csv s3://<data-lake-xxxxxxxxx>/samples/
