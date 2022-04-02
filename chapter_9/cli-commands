@@ -1,0 +1,9 @@
+aws quicksight create-group --group-name "Marketing" --description "Group for the Marketing Department" --aws-account-id <account-id> --namespace default --region us-east-1
+
+aws quicksight create-group-membership --member-name reader --group-name Marketing --aws-account-id <account-id> --namespace default --region us-east-1
+
+aws quicksight update-user --user-name author-iam  --role AUTHOR --custom-permissions-name custom-author --email <your-email> --aws-account-id <account-id> --namespace default --region us-east-1
+
+aws quicksight delete-user --user-name author-iam --aws-account-id <account-id> --namespace default --region us-east-1
+
+
