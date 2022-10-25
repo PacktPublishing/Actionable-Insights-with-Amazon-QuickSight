@@ -58,3 +58,7 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
   
 ## Get to Know the Author
 **Manos Samatas** is a Solutions Architect specializing in Big Data and Analytics. He has several years of experience developing and designing big data applications for various industries, including telecommunications, cybersecurity, healthcare, and public sector. He is an accredited AWS Subject Matter Expert (SME) in Analytics and he is certified with the AWS Data Analytics Specialty and the AWS Solutions Architect Professional certifications. Manos lives in London with his fiancé Gabriela. In his free time, he enjoys traveling, socializing with friends, and taking care of his plants.
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781801079297">https://packt.link/free-ebook/9781801079297 </a> </p>
